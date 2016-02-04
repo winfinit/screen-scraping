@@ -16,7 +16,16 @@ request("http://www.osboxes.org/sitemap/", function(err, response, body) {
 				console.error("NO LINKS:", os);
 			} else {
 				download_links.forEach(function(row) {
-					console.log("LINK:", row);
+					var regexp = new RegExp('/projects/(.+?)/files/(.*/)?(.+)/download$');
+					var matches = row.match(regexp);					
+					if ( matches == null ) {
+						return;
+					}
+					var project = matches[1];
+					var path = matches[2] || ''; // may be undefined
+					var filename = matches[3];
+					var url = '//downloads.sourceforge.net/project/' + project + '/' + path + filename;
+					console.log("LINK:", "http:" + url);
 				});
 			}
 		});
