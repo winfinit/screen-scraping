@@ -1,0 +1,14 @@
+{
+  "name": "osboxes",
+  "version": "1.0.0",
+  "description": "helper script to download os boxes images",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Roman Jurkov <winfinit@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+	"request": "~2.69.0"
+  }
+}
